@@ -1,5 +1,5 @@
-const student_signup = require("./model").student_signup
-const student_data = require("./model").student_data
+const student_signup = require("../model/model").student_signup
+const student_data = require("../model/model").student_data
 const bcrypt = require("bcryptjs")
 var jwt = require("jsonwebtoken");
 const admin = process.env.ADMIN

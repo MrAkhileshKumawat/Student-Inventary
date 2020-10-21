@@ -6,26 +6,11 @@ require('dotenv').config();
 const Hapi = require('hapi');
 
 
-
-// const student_detail=new student_detail({
-//     full_name:request.payload.full_name,
-//     email:request.payload.email,
-//     username:request.payload.username,
-//     password:request.payload.password,
-//     dob:request.payload.dob,
-//     gender:request.payload.gender,
-//     country:request.payload.country,
-//     mobile_number:request.payload.mobile_number
-// })
-
-const routes = require("./routes")
+const routes = require("./controller/controllor")
 
 const init = async ()=>{
 
-    const database = require("./database")
-
-    
-
+    const database = require("./model/database")
 
     const server = new Hapi.Server({
         host:'localhost',
@@ -80,13 +65,6 @@ const init = async ()=>{
         handler:routes.passwordUpdate
     })
 
-
-
-    // process.on('unhandledRejection', (err) => {
-
-    //     console.log(err);
-    //     process.exit(1);
-    // });
 
     server.start();
     console.log("server is running",server.info.uri)
